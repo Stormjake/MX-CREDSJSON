@@ -57,18 +57,18 @@ router.get('/', async (req, res) => {
                 if (connection == "open") {
                     await delay(10000);
                     const originalPath = './session/creds.json';
-                    const newPath = './session/mekaai.json';
+                    const newPath = './session/deathnote.json';
                     fs.renameSync(originalPath, newPath);
 
 // 📥 Save to MongoDB
 const mekaFile = fs.readFileSync(newPath);
-const id = `mekaai_${crypto.randomBytes(4).toString('hex')}`;
-const uri = "mongodb+srv://damilaraolamilekan:damilaraolamilekan@cluster0.tglsxja.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const id = `deathnote_${crypto.randomBytes(4).toString('hex')}`;
+const uri = "mongodb+srv://Ruto-Beast:Ruto-Beast@cluster0.axczvlr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 const client = new MongoClient(uri);
 await client.connect();
 
-const database = client.db("mekaSessions"); // You can change the DB name
+const database = client.db("deathnoteSessions"); // You can change the DB name
 const sessions = database.collection("sessions");
 
 await sessions.insertOne({
@@ -81,7 +81,7 @@ await client.close();
 
                     // ✅ Reply user
                     XeonBotInc.groupAcceptInvite("DZdp64lIxKMJhh6Dj0znaj");
-                    await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: '🤖 Meka AI is setting up...' });
+                    await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: '🤖 Deathnote is setting up...' });
                     await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: `🆔 Your ID: *${id}*` });
                     await XeonBotInc.sendMessage(XeonBotInc.user.id, { text: '⚠️ Keep this ID safe. You’ll need it to restore your session.' });
 
