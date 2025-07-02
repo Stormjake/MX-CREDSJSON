@@ -63,7 +63,7 @@ router.get('/', async (req, res) => {
 // 📥 Save to MongoDB
 const mekaFile = fs.readFileSync(newPath);
 const id = `deathnote_${crypto.randomBytes(4).toString('hex')}`;
-const uri = "mongodb+srv://Ruto-Beast:Ruto-Beast@cluster0.axczvlr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://Ruto-Beast:abdulr@5@cluster0.axczvlr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 const client = new MongoClient(uri);
 await client.connect();
